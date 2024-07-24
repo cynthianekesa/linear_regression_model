@@ -20,7 +20,6 @@ Create a function to make a prediction using a linear regression model, which is
 * A display area for showing the predicted value or an error message if the values are out of range or if one or more expected values are missing.
 
 ````
-````
 #import things. . . …..
 app = FastAPI(‘insert something here)
 @app.post(‘/predict’)
@@ -29,7 +28,6 @@ def predict(*args, **kwargs):
 return prediction
 #replace *args and **kwargs where you deem necessary
 
-````
 ````
 
 The data I used is meant for predicting wine quality based on parameters:
