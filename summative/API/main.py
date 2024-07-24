@@ -6,10 +6,12 @@ from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
 
 
-import joblib
+import pickle as pk
 
-# Load the pre-trained model
-model = joblib.load("/summative/API/winequality_model.joblib")
+# load the model in the env 
+# Opening saved model
+with open("./API/model.pkl", "rb") as file:
+    model = pk.load(file)
 
 # create app instance 
 app = FastAPI()
@@ -27,15 +29,11 @@ app.add_middleware(
 class WineQRequest(BaseModel):
     fixed_acidity: float = Field(gt=0, lt=10000)
     volatile_acidity: float = Field(gt=0, lt=10000)
-    citric_acid: float = Field(gt=0, lt=10000) 
     residual_sugar: float = Field(gt=0, lt=10000)
     chlorides: float = Field(gt=0, lt=10000)
     total_SO2: float = Field(gt=0, lt=10000)
-    density: float = Field(gt=0, lt=10000)
-    pH: float = Field(gt=0, lt=10000)
     sulphates: float = Field(gt=0, lt=10000)
-    alcohol: float = Field(gt=0, lt=10000)        
-    goodquality: int = Field(gt=0, lt=500)
+    alcohol: float = Field(gt=0, lt=10000)
     
 # class testing 
 @app.get("/class")
@@ -50,7 +48,7 @@ async def get_hello():
 @app.post('/predict', status_code=status.HTTP_200_OK)
 async def make_prediction(wineq_request: WineQRequest):
     try:
-        single_row = [[wineq_request.fixed_acidity, wineq_request.volatile_acidity, wineq_request.citric_acid, wineq_request.residual_sugar, wineq_request.chlorides, wineq_request.total_SO2, wineq_request.density, wineq_request.pH, wineq_request.sulphates, wineq_request.alcohol, wineq_request.goodquality]]
+        single_row = [[wineq_request.fixed_acidity, wineq_request.volatile_acidity, wineq_request.residual_sugar, wineq_request.chlorides, wineq_request.total_SO2, wineq_request.sulphates, wineq_request.alcohol]]
         new_data_scaled = scaler.transform(single_row)
         new_value = model.predict(new_data_scaled)
         return {"predicted Quality ": new_value[0]}
