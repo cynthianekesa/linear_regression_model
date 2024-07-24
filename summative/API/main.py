@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import joblib
 
 # Load the pre-trained model
-model =joblib.load("/summative/API/winequality_model.joblib")
+model = joblib.load("/summative/API/winequality_model.joblib")
 
 # create app instance 
 app = FastAPI()
