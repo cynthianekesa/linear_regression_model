@@ -1,7 +1,7 @@
 # linear_regression_model
 
 ## Introduction
-This linear regression assignment is a summative assignment aimed at understanding linear regression using 3 tasks.
+This linear regression assignment is a summative assignment aimed at understanding the use of linear regression in predictive analysis using 3 tasks.
 
 ### Task 1: Linear Regression
 * Creating and Optimizing a linear regression model using gradient descent.
