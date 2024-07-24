@@ -27,7 +27,10 @@ app = FastAPI(‘insert something here)
 def predict(*args, **kwargs):
  #insert your code here
 return prediction
-#replace *args and **kwargs where you deem necessary ```
+#replace *args and **kwargs where you deem necessary
+
+````
+````
 
 The data I used is meant for predicting wine quality based on parameters:
 - fixed_acidity:
@@ -38,9 +41,6 @@ The data I used is meant for predicting wine quality based on parameters:
 - sulphates:
 - alcohol:
 - colour:
-  
-````
-````
 
 ### API Documentation
 Link = [render fastapi hosted endpoint](https://linear-regression-model-11.onrender.com)
