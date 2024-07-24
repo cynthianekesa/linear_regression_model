@@ -19,17 +19,9 @@ Create a function to make a prediction using a linear regression model, which is
 * A Button with the text "Predict".
 * A display area for showing the predicted value or an error message if the values are out of range or if one or more expected values are missing.
 
-### Submission Details
-* A GitHub link containing the notebook, API code files, and Flutter app with directories well labeled ** empty cell outputs on the notebook will be considered failed run outputs**
-* On the README :
-* Provide a publicly available API endpoint that returns predictions given input values. Tests will be assessed using Postman, alternatively, you can provide steps to access the API.
-
-## API Documnetation
-Link = [render fastapi hosted endpoint](https://linear-regression-model-11.onrender.com)
-The fastapi swagger shows the following:
-
-
-``` #import things. . . …..
+````
+````
+#import things. . . …..
 app = FastAPI(‘insert something here)
 @app.post(‘/predict’)
 def predict(*args, **kwargs):
@@ -45,22 +37,36 @@ The data I used is meant for predicting wine quality based on parameters:
 - free_SO2:
 - sulphates:
 - alcohol:
-- colour: 
+- colour:
+  
+````
+````
 
-### Task 3: Flutter App
+### API Documentation
+Link = [render fastapi hosted endpoint](https://linear-regression-model-11.onrender.com)
+The fastapi swagger shows the following:
 Use the API endpoint created in task 2,that is, url + path_to_predict on your flutter app.
+
 This is how the API works:
-``` GET/ class
+
+```
+    GET/ class
     Content type
     application/json
-    null ```
+    null
 
-```GET /
+```
+
+````
+   GET /
    Content type
    application/json
-   null ```
+   null
 
-```POST /predict
+````
+
+````
+   POST /predict
    Content type
    application/json
    {
@@ -73,9 +79,18 @@ This is how the API works:
   "alcohol": 999,
   "colour": 1
    }
-   null```
+   null
 
-## Navigating Through the Application
+````
+
+## Submission Details
+* A GitHub link containing the notebook, API code files, and Flutter app with directories well labeled ** Empty cell outputs on the notebook will be considered failed run outputs**
+* On the README :
+* Provide a publicly available API endpoint that returns predictions given input values. Tests will be assessed using Postman; alternatively, you can provide steps to access the API.
+
+## Task 3: Flutter App
+
+### Navigating Through the Application
 Make sure you reload the endpoint server before opening the Flutter app. The test the 8 inputs in the test fields. Press predict to get the quality of the wine.
 
 ## Contributing
