@@ -5,29 +5,12 @@ from fastapi import FastAPI, Depends, HTTPException, status, Path
 from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
 
-
-# import pickle as pk
-
-# load the model in the env 
-# Opening saved model
-#with open("../API/model.pkl", "rb") as file:
-# model = pk.load(file)
-
 import joblib
 
 model = joblib.load("model.pkl")
 
-# create app instance 
+# creating an app instance 
 app = FastAPI() 
-
-# Configure CORS
-#app.add_middleware(
-#  CORSMiddleware,
-#   allow_origins=["*"],  # Allow requests from any origin
-#   allow_credentials=True,
-#    allow_methods=["GET", "POST"],  # Allow GET and POST requests
-#  allow_headers=["*"],  # Allow any headers
-#)
 
 # create a pedantic class for the request
 class WineQRequest(BaseModel):
@@ -55,12 +38,9 @@ async def get_hello():
 async def make_prediction(wineq_request: WineQRequest):
     try:
         single_row = [[wineq_request.fixed_acidity, wineq_request.volatile_acidity, wineq_request.residual_sugar, wineq_request.chlorides, wineq_request.free_SO2, wineq_request.sulphates, wineq_request.alcohol, wineq_request.colour]]
-        #new_data_scaled = scaler.transform(single_row)
-        #new_value = model.predict(new_data_scaled)
         new_value = model.predict(single_row)
         integer_quality = int(new_value[0])  # Convert the predicted value to an integer
         return {"predicted Quality": integer_quality}
-        #return {"predicted Quality ": new_value[0][0]}
         
     #except:
     #    raise HTTPException(status_code=500, detail="Something went wrong.")
