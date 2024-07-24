@@ -87,8 +87,6 @@ This is how the API works:
 * Provide a publicly available API endpoint that returns predictions given input values. Tests will be assessed using Postman; alternatively, you can provide steps to access the API.
 
 ## Task 3: Flutter App
-
-### Navigating Through the Application
 Make sure you reload the endpoint server before opening the Flutter app. The test the 8 inputs in the test fields. Press predict to get the quality of the wine.
 
 ## Contributing
