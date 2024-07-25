@@ -96,7 +96,7 @@ Instruction of the flutter app creation are:
   
 Make sure you reload the endpoint server before opening the Flutter app. 
 
-The test the 8 inputs in the test fields. 
+Then test the 8 inputs in the test fields. 
 
 Press predict to get the quality of the wine.
 
