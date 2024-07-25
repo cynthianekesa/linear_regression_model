@@ -80,6 +80,13 @@ This is how the API works:
 
 ````
 
+````
+  {
+  "predicted Quality": 
+  }
+
+````
+
 ## Task 3: Flutter App
 Instruction of the flutter app creation are:
 
@@ -87,7 +94,11 @@ Instruction of the flutter app creation are:
 * A Button with the text "Predict".
 * A display area for showing the predicted value or an error message if the values are out of range or if one or more expected values are missing.
   
-Make sure you reload the endpoint server before opening the Flutter app. The test the 8 inputs in the test fields. Press predict to get the quality of the wine.
+Make sure you reload the endpoint server before opening the Flutter app. 
+
+The test the 8 inputs in the test fields. 
+
+Press predict to get the quality of the wine.
 
 ## Submission Details
 * A GitHub link containing the notebook, API code files, and Flutter app with directories well labeled ** Empty cell outputs on the notebook will be considered failed run outputs**
