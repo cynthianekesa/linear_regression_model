@@ -279,7 +279,7 @@ class _PredictionPageState extends State<PredictionPage> {
               if (_errorMessage.isNotEmpty)
                 Text(
                   _errorMessage,
-                  style: TextStyle(color: Colors.red, fontSize: 16),
+                  style: TextStyle(color: Colors.red, fontSize: 15),
                   textAlign: TextAlign.center,
                 ),
               if (_prediction.isNotEmpty)

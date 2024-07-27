@@ -21,7 +21,7 @@ class WineQRequest(BaseModel):
     free_SO2: float = Field(gt=0, lt=1000.0)
     sulphates: float = Field(gt=0, lt=1000.000)
     alcohol: float = Field(gt=0, lt=1000.0)
-    colour: int = Field(gt=0, lt=2)
+    colour: int = Field(gt=-1, lt=2)
 
 
 # class testing 
