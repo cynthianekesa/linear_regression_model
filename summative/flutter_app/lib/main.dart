@@ -151,7 +151,7 @@ class _PredictionPageState extends State<PredictionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Prediction App'),
+        title: Text('WineWise'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -284,7 +284,7 @@ class _PredictionPageState extends State<PredictionPage> {
                 ),
               if (_prediction.isNotEmpty)
                 Text(
-                  'Prediction: $_prediction',
+                  'Predicted Quality: $_prediction',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
