@@ -111,7 +111,7 @@ class _PredictionPageState extends State<PredictionPage> {
 
     try {
       final response = await http.post(
-        Uri.parse('https://linear-regression-model-11.onrender.com/predict'),
+        Uri.parse('https://linear-regression-model-13.onrender.com/predict'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -151,7 +151,7 @@ class _PredictionPageState extends State<PredictionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('WineWise'),
+        title: Text('Prediction App'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

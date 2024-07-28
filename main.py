@@ -12,6 +12,15 @@ model = joblib.load("model.pkl")
 # creating an app instance 
 app = FastAPI() 
 
+# Configure CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow requests from any origin
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],  # Allow GET and POST requests
+    allow_headers=["*"],  # Allow any headers
+)
+
 # create a pedantic class for the request
 class WineQRequest(BaseModel):
     fixed_acidity: float = Field(gt=0, lt=1000.0)
