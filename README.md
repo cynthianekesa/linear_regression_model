@@ -38,11 +38,11 @@ The data I used is meant for predicting wine quality based on parameters:
 - colour:
 
 ### API Documentation
-* Link = [render fastapi hosted endpoint](https://linear-regression-model-11.onrender.com)
+* Link = [render fastapi hosted link](https://linear-regression-model-13.onrender.com)
 
 * The fastapi swagger shows the following:
 
-* Use the API endpoint created in task 2,that is, url + path_to_predict on your flutter app.
+* Use the API endpoint created in task 2,that is, url + path_to_predict on your flutter app.(https://linear-regression-model-13.onrender.com/predict)
 
 This is how the API works:
 
